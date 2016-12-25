@@ -1,0 +1,144 @@
+<html style="overflow : hidden">
+    <head>
+        {%load staticfiles%}
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/admin-bar.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css'%}"> 
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css(1)'%}"> 
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css(2)'%}"> 
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css(3)'%}"> 
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css(4)'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/bootstrap.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css(5)'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/dashicons.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/font-awesome.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/front(1).css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/front.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/pixeden-icons.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/responsive.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/share-svg.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/style(1).css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/style.css'%}">  
+    
+    <style type="text/css" id="custom-background-css">
+        body.custom-background {
+            background-image: url('{% static 'app/bg.jpg' %}');
+            background-repeat: repeat;
+            background-position: top left;
+            background-attachment: scroll;
+        }
+    </style>
+    </head>
+    
+<body class="home blog logged-in admin-bar custom-background  customize-support">
+
+<div class="preloader" style="display: none;">
+    <div class="status" style="display: none;">&nbsp;
+    </div>
+</div>
+
+<div id="mobilebgfix">
+	<div class="mobile-bg-fix-img-wrap">
+		<div class="mobile-bg-fix-img">
+
+        </div>
+	</div>
+	<div class="mobile-bg-fix-whole-site">
+
+
+    <header id="home" class="header" style="min-height: 111px;">
+
+	<div id="main-nav" class="navbar navbar-inverse bs-docs-nav fixed" role="banner" style="min-height: 76px;">
+
+		<div class="container">
+
+			<div class="navbar-header responsive-logo">
+
+				<a href="/" class="navbar-brand"><img src="{%static 'app/lms.png'%}" alt="LMS"></a>
+			</div>
+
+			<nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" id="site-navigation">
+				<br/>
+                <h2 class="red-text">WELCOME TO FACULTY LEAVE MANAGEMENT SYSTEM</h2>			
+            </nav>
+
+		</div>
+
+	</div>
+
+	<!-- / END TOP BAR -->  
+<!-- .header-content-wrap -->
+
+	<!-- / END TOP BAR -->
+   <div class="header-content-wrap">
+    <form action="" method="post">
+        {% csrf_token %}
+       <h2 class="intro-text">{{status}}</h2>
+        <div style="padding-left:550px">
+        <table style="width:auto;">
+            <tr>
+                <td class="red-text">  <p>Username</p>
+                    </td>
+                <td>
+                    <input type="text" name="username" placeholder="Username"/><br/>
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="green-text"> 
+                    <p>Password:</p>
+                </td>
+                <td><input type="password" name="password" placeholder="Password"/>
+                    </td>
+                </tr>
+            </table>
+            </div>
+        <input type="submit" value="Log In" />
+    </form>
+
+<div style="padding-top:90px"> 
+</div>
+        </div>
+</header>
+<footer id="footer" role="contentinfo">
+    <div class="footer-widget-wrap"></div>
+    <div class="container">
+        <div class="col-md-4 company-details">
+        <div class="icon-top red-text">
+            <img src="{% static 'app/map.png' %}" alt="">
+        </div>
+        <div class="zerif-footer-address">IIITNaya Raipur Plot No. 7,
+        Sector 24 Naya Raipur 492 661
+        Chhattisgarh India 
+            </div>
+        </div>
+    <div class="col-md-4 company-details">
+        <div class="icon-top green-text">
+            <img src="{% static 'app/envelope.png' %}" alt="">
+        </div>
+        <div class="zerif-footer-email">
+        <a href="mailto:editor@iiitnrantardhwani.org.in">Developer's Email</a><br>teamcosmos@gmail.com
+        </div>
+    </div>
+    <div class="col-md-4 copyright">
+        <ul class="social">
+        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            
+        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+        
+        <li><a href=""><i class="fa fa-instagram"></i></a></li></ul>
+
+        <p id="zerif">Copyright 2016 C-Os-Mos (IIITNR)</p>
+    </div> 
+    <!-- / END CONTAINER -->
+
+</div>
+</footer>
+     <!-- / END FOOOTER  -->
+</div><!-- mobile-bg-fix-whole-site -->
+</div>
+ 
+    <script type="text/javascript" src="{%static 'app/scripts/smoothscroll.js.download'%}"></script>
+    <script type="text/javascript" src="{%static 'app/scripts/scrollReveal.js.download'%}"></script>
+</body></html>
+
+

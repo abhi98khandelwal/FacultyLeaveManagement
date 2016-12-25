@@ -1,0 +1,301 @@
+﻿<html style="overflow : hidden">
+
+    <head>
+        {%load staticfiles%}
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/admin-bar.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css'%}"> 
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css(1)'%}"> 
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css(2)'%}"> 
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css(3)'%}"> 
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css(4)'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/bootstrap.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/css(5)'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/dashicons.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/font-awesome.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/front(1).css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/front.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/pixeden-icons.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/responsive.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/share-svg.css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/style(1).css'%}">
+        <link rel="stylesheet" type="text/css" href="{%static 'app/content/style.css'%}">  
+    
+    <style type="text/css" id="custom-background-css">
+        body.custom-background {
+            background-image: url('{% static 'app/bg.jpg' %}');
+            background-repeat: repeat;
+            background-position: top left;
+            background-attachment: scroll;
+        }
+    </style>
+    </head>
+    
+<body class="home blog logged-in admin-bar custom-background  customize-support">
+
+    <div class="preloader" style="display: none;">
+        <div class="status" style="display: none;">&nbsp;
+        </div>
+    </div>
+
+    <div id="mobilebgfix">
+	    <div class="mobile-bg-fix-img-wrap">
+		    <div class="mobile-bg-fix-img">
+
+            </div>
+	    </div>
+	    <div class="mobile-bg-fix-whole-site">
+
+
+        <header id="home" class="header" style="min-height: 111px;">
+
+	    <div id="main-nav" class="navbar navbar-inverse bs-docs-nav fixed" role="banner" style="min-height: 76px;">
+
+		    <div class="container">
+
+			    <div class="navbar-header responsive-logo">
+
+				    <a href="/" class="navbar-brand"><img src="{%static 'app/lms.png'%}" alt="LMS"></a>
+			    </div>
+
+			    <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation" id="site-navigation">
+				    <ul id="menu-navigation" class="nav navbar-nav navbar-right responsive-nav main-nav-list">
+                    <li id="menu-item-919" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-919"><a href="{%url 'index'%}">Home</a></li>
+                    <li id="menu-item-60" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60"><a href="{% url "applyleave"%}">Apply Leave</a></li>
+                    <li id="menu-item-60" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60"><a href="{% url "pendingleave"%}">Pending Leave</a></li>
+                    <li id="menu-item-60" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60"><a href="{% url "previousleave"%}">Previous Leave</a></li>
+                    <li id="menu-item-60" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60"><a href="#team">View Profile</a></li>
+                    <li id="menu-item-60" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60"><a href="#footer">About Us</a></li>
+                    <li id="menu-item-60" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-60"><a href="{%url 'logout'%}">Log Out({{request.user.username}})</a></li>
+
+                    </ul>			
+                </nav>
+
+		    </div>
+
+	    </div>
+	    <!-- / END TOP BAR -->
+            <div class="home-header-wrap">
+
+    <div class="header-content-wrap">
+        <div class="container">
+        <h1 class="intro-text">Faculty Leave Management System</h1>
+            <div class="buttons">
+                <a href="{% url 'applyleave' %}" class="btn btn-primary custom-button red-btn">Apply Leave</a>
+                <a href="{% url 'pendingleave' %}" class="btn btn-primary custom-button green-btn">Pending Leaves</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- .header-content-wrap -->
+    </header>
+    <div class="clear"></div>
+            </div>	
+         <!-- / END HOME SECTION  -->
+    
+    <div id="content" class="site-content">
+
+    <section class="focus" id="focus">
+
+    <div class="container">
+
+	    <!-- SECTION HEADER -->
+
+	    <div class="section-header">
+
+		    <!-- SECTION TITLE -->
+
+		    <h2 class="dark-text">Available Leaves</h2>
+	    </div>
+
+	    <div class="row">
+
+			
+            <div class="col-lg-3 col-sm-3 focus-box" data-scrollreveal="enter left after 0.15s over 1s" data-sr-init="true" data-sr-complete="true">
+
+			                <div class="service-icon">
+				
+								
+					    <a href="{% url 'applyleave'%}"><i class="pixeden" style="background:url(http://iiitnrantardhwani.org.in/wp-content/uploads/2016/03/Article-4.png) no-repeat center;width:100%; height:100%;">{{request.user.details.medical}}</i> <!-- FOCUS ICON--></a>
+				
+				
+                </div>
+			
+                <h3 class="red-border-bottom">Medical Leave</h3>
+                <!-- FOCUS HEADING -->
+
+				
+
+            </div>
+
+        
+            <div class="col-lg-3 col-sm-3 focus-box" data-scrollreveal="enter left after 0.15s over 1s" data-sr-init="true" data-sr-complete="true">
+
+			                <div class="service-icon">
+				
+								
+					    <a href="{% url 'applyleave' %}"><i class="pixeden" style="background:url(http://iiitnrantardhwani.org.in/wp-content/uploads/2016/03/Story-1.png) no-repeat center;width:100%; height:100%;">{{request.user.details.earned}}</i> <!-- FOCUS ICON--></a>
+				
+				
+                </div>
+			
+                <h3 class="red-border-bottom">Earned Leave</h3>
+                <!-- FOCUS HEADING -->
+
+				
+
+            </div>
+
+        
+            <div class="col-lg-3 col-sm-3 focus-box" data-scrollreveal="enter left after 0.15s over 1s" data-sr-init="true" data-sr-complete="true">
+
+			                <div class="service-icon">
+				
+								
+					    <a href="{% url 'applyleave'%}"><i class="pixeden" style="background:url(http://iiitnrantardhwani.org.in/wp-content/uploads/2016/03/Posters-1.png) no-repeat center;width:100%; height:100%;">{{request.user.details.casual}}</i> <!-- FOCUS ICON--></a>
+				
+				
+                </div>
+			
+                <h3 class="red-border-bottom">Casual Leave</h3>
+                <!-- FOCUS HEADING -->
+
+				
+
+            </div>
+
+        
+            <div class="col-lg-3 col-sm-3 focus-box" data-scrollreveal="enter left after 0.15s over 1s" data-sr-init="true" data-sr-complete="true">
+
+			                <div class="service-icon">
+				
+								
+					    <a href="{%url 'applyleave'%}"><i class="pixeden" style="background:url(http://iiitnrantardhwani.org.in/wp-content/uploads/2016/03/Essay-1.png) no-repeat center;width:100%; height:100%;">{{request.user.details.holiday}}</i> <!-- FOCUS ICON--></a>
+				
+				
+                </div>
+			
+                <h3 class="red-border-bottom">Restricted Holiday Leave</h3>
+                <!-- FOCUS HEADING -->
+
+				
+
+            </div>
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+	    <div class="col-lg-3 col-sm-3 focus-box" data-scrollreveal="enter left after 0.15s over 1s" data-sr-init="true" data-sr-complete="true">
+
+			                <div class="service-icon">
+				
+								
+					    <a href="{% url 'applyleave'%}"><i class="pixeden" style="background:url(http://iiitnrantardhwani.org.in/wp-content/uploads/2016/03/Posters-1.png) no-repeat center;width:100%; height:100%;">{{request.user.details.study}}</i> <!-- FOCUS ICON--></a>
+				
+				
+                </div>
+			
+                <h3 class="red-border-bottom">Study Leave</h3>
+                <!-- FOCUS HEADING -->
+
+				
+
+            </div></div>
+
+    </div> <!-- / END CONTAINER -->
+
+    </section>  <!-- / END FOCUS SECTION --> <!-- END ABOUT US SECTION -->    <!-- / END FOCUS SECTION --> 
+            <!-- END ABOUT US SECTION -->
+        <section class="our-team" id="team">
+        <div class="container">
+            <div class="section-header"><h2 class="dark-text">Your Profile</h2>
+            <div class="section-legend">The people behind the scenes</div>
+            </div>
+            <div class="row" data-scrollreveal="enter left after 0s over 0.1s" data-sr-init="true" data-sr-complete="true">
+                <div class="col-lg-3 col-sm-3 team-box">
+                    <div class="team-member">
+                        <figure class="profile-pic">
+                        <img src="{%static 'app/user.jpg' %}" alt="Uploaded image">
+                        </figure>
+                    
+                        <div class="member-details">
+                            <h3 class="dark-text red-border-bottom">{{user.username}}</h3>
+                            <div class="position">{{user.email}}</div>
+                        </div>
+                        <div class="details">Click to edit details</div>
+				    </div>
+                </div>
+            </div> 
+        </div>
+    </section>
+    </div><!-- .site-content -->
+
+    <footer id="footer" role="contentinfo">
+        <div class="footer-widget-wrap"></div>
+        <div class="container">
+            <div class="col-md-4 company-details">
+            <div class="icon-top red-text">
+                <img src="{% static 'app/map.png' %}" alt="">
+            </div>
+            <div class="zerif-footer-address">IIIT–Naya Raipur Plot No. 7,
+            Sector 24 Naya Raipur 492 661
+            Chhattisgarh India 
+                </div>
+            </div>
+        <div class="col-md-4 company-details">
+            <div class="icon-top green-text">
+                <img src="{% static 'app/envelope.png' %}" alt="">
+            </div>
+            <div class="zerif-footer-email">
+            <a href="mailto:editor@iiitnrantardhwani.org.in">Developer's Email</a><br>teamcosmos@gmail.com
+            </div>
+        </div>
+        <div class="col-md-4 copyright">
+            <ul class="social">
+            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+            
+            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+        
+            <li><a href=""><i class="fa fa-instagram"></i></a></li></ul>
+
+            <p id="zerif">Copyright © 2016 C-Os-Mos (IIITNR)</p>
+        </div> 
+        <!-- / END CONTAINER -->
+
+    </div>
+    </footer>
+         <!-- / END FOOOTER  -->
+    </div><!-- mobile-bg-fix-whole-site -->
+    </div>
+ 
+        <script type="text/javascript" src="{%static 'app/scripts/smoothscroll.js.download'%}"></script>
+        <script type="text/javascript" src="{%static 'app/scripts/scrollReveal.js.download'%}"></script>
+
+    <!--
+    <script type="text/javascript" src="{%static 'app/scripts/admin-bar.min.js.download'%}"></script>
+    <script type="text/javascript" src="{%static 'app/scripts/one_pirate_script.js'%}"></script>
+    <script type="text/javascript" src="{%static 'app/scripts/jquery.nicescroll.js'%}"></script>
+    <script type="text/javascript" src="{%static 'app/scripts/zerif-nicescroll.js'%}"></script>
+    <script type="text/javascript" src="{%static 'app/scripts/bootstrap.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'app/scripts/jquery.knob.js.download'%}"></script>
+    <script type="text/javascript" src="{%static 'app/scripts/zerif.js.download'%}"></script>
+    <script type="text/javascript" src="{%static 'app/scripts/combined.js.download'%}"></script>
+    <script type="text/javascript" src="{%static 'app/scripts/wp-embed.min.js.download'%}"></script>
+        -->
+
+        <div id="ascrail2000" class="nicescroll-rails nicescroll-rails-vr" style="width: 8px; z-index: auto; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; display: block; opacity: 1;">
+            <div class="nicescroll-cursors" style="position: relative; top: 0px; float: right; width: 8px; height: 60px; background-color: rgb(135, 172, 191); background-clip: padding-box; border-radius: 5px;">
+            </div>
+        </div>
+        <div id="ascrail2000-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 8px; z-index: auto; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 1;">
+            <div class="nicescroll-cursors" style="position: absolute; top: 0px; height: 8px; width: 663px; background-color: rgb(135, 172, 191); background-clip: padding-box; border-radius: 5px;">
+            </div>
+        </div>
+</body>
+</html>
