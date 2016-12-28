@@ -27,6 +27,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\forms.py" />
     <Compile Include="app\models.py" />
     <Compile Include="app\tests.py" />
@@ -75,6 +78,7 @@
     <Content Include="app\static\app\map.png" />
     <Content Include="app\static\app\user.jpg" />
     <Content Include="app\templates\app\applyleave.html" />
+    <Content Include="app\templates\app\approve_leave.html" />
     <Content Include="app\templates\app\pendingleave.html" />
     <Content Include="app\templates\app\previousleave.html" />
     <Content Include="app\templates\app\profile.html" />

@@ -21,11 +21,8 @@ class User_Details(models.Model):
     director = models.BooleanField(default =0)
     work_holiday = models.FloatField(default = 0)
 
-    def add_earned_leaves(self):
-        if self.work_holiday >0:
-            self.earned+=(self.work_holiday/2.5)
-        self.work_holiday = 0
-
+    def __str__(self):
+        return self.user.username
 
 
 class Leave_Status(models.Model):
@@ -36,3 +33,6 @@ class Leave_Status(models.Model):
     end_date = models.DateField()
     suggested = models.CharField(max_length = 50)
     status = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.user

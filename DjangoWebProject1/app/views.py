@@ -165,8 +165,14 @@ def pendingleave(request):
         'app/pendingleave.html',
         {'pending' : pending}        
         )
-
+@login_required(login_url='/')
 def approveleave(request):
+    if request.method == 'GET':
+        if request.user.hod:
+            needs_approval = Leave_Status.objects.filter(faculty = True,status=False)
+        elif request.user.director:
+            needs_approval = Leave_Status.objects.filter(status=False)             
+        
     return render(
         request,
         'app/approve.html'
